@@ -1,6 +1,6 @@
 cask "sagecast" do
-  version "1.0"
-  sha256 "fa233472fe9b3c468d0311dea0007b7e8434e75bd2a97ee2276c354ab80fe25e"
+  version "1.0.1"
+  sha256 "c59ffd0a9fa302e1a46332bbe09451c72c461cc707bf55eb40636ad279c1f5a3"
 
   url "https://sagecast.anshulgarg.in/releases/SageCast-#{version}.dmg"
   name "SageCast"
