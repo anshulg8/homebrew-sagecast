@@ -17,6 +17,15 @@ cask "sagecast" do
 
   app "SageCast.app"
 
+  # Brew Cask adds com.apple.quarantine to installed apps by default,
+  # which makes Gatekeeper block ad-hoc-signed binaries on first launch.
+  # Strip it explicitly so users don't need --no-quarantine on the
+  # command line. Once SageCast is notarized this can be removed.
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/SageCast.app"]
+  end
+
   # `brew uninstall --zap --cask sagecast` removes user data too.
   # Without --zap, uninstall just removes the .app and leaves data
   # alone — matching what most users expect when reinstalling.
