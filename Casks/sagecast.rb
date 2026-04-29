@@ -2,7 +2,8 @@ cask "sagecast" do
   version "1.0.3"
   sha256 "9b18cff06d790b11960c37578810aaaa59544785471e58ff443f8e86e2f5528a"
 
-  url "https://sagecast.anshulgarg.in/releases/SageCast-#{version}.dmg"
+  url "https://sagecast.anshulgarg.in/api/download?v=#{version}",
+      verified: "sagecast.anshulgarg.in/"
   name "SageCast"
   desc "Local-first podcast player with on-device transcription and AI chat"
   homepage "https://sagecast.anshulgarg.in/"
